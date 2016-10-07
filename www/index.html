@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+        <!-- ionic/angularjs js -->
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>
+        <!-- your app's js -->
+        <script src="js/app.js"></script>
+    </head>
+    <body ng-app="starter" ng-controller="AppCtrl">
+        <ion-pane>
+            <ion-header-bar class="bar-stable">
+                <h1 class="title">Plataforma Instalación</h1>
+            </ion-header-bar>
+
+            <ion-content padding="true">
+                <form ng-submit="submit()" onSubmit="this.reset()">
+                    <h1>Datos Generales</h1>
+                    <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nombre del Cliente</span>
+                    <input type="text" name="nameclient" placeholder="Ej: pullmancliente" ng-model="data.nameclient">
+                </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Dirección</span>
+                        <input type="text" name="adress" placeholder="Ej: direccion" ng-model="data.adress">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Fecha</span>
+                        <input type="text" name="date" placeholder="Ej: 11-03-2016" ng-model="data.date">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nombre del Proyecto</span>
+                        <input type="text" name="nameproject" placeholder="Ej: proyecto" ng-model="data.nameproject">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Tipo (Demo/Proyecto)</span>
+                        <input type="text" name="type" placeholder="Ej: tipo" ng-model="data.type">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Hora de Inicio</span>
+                        <input type="text" name="timeini" placeholder="Ej: inicio" ng-model="data.timeini">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Hora de Término</span>
+                        <input type="text" name="timeend" placeholder="Ej: fin" ng-model="data.timeend">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Encargado Gestsol</span>
+                        <input type="text" name="managergest" placeholder="Ej: gestsol" ng-model="data.managergest">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Encargado Eléctrico</span>
+                        <input type="text" name="managerelect" placeholder="Ej: electrico" ng-model="data.managerelect">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Encargado Cliente</span>
+                        <input type="text" name="managerclient" placeholder="Ej: cliente" ng-model="data.managerclient">
+                    </label>
+
+                    <h1>Antecedentes Vehículo</h1>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Patente</span>
+                        <input type="text" name="patent" placeholder="Ej: patente" ng-model="data.patent">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Marca</span>
+                        <input type="text" name="brand" placeholder="Ej: marca" ng-model="data.brand">
+                    </label>
+
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Carroceria</span>
+                        <input type="text" name="body" placeholder="Ej: carroceria" ng-model="data.body">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Número Vehículo</span>
+                        <input type="text" name="numveh" placeholder="Ej: vehiculo" ng-model="data.numveh">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Modelo</span>
+                        <input type="text" name="model" placeholder="Ej: modelo" ng-model="data.model">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Flota/Grupo</span>
+                        <input type="text" name="fleet" placeholder="Ej: flota" ng-model="data.fleet">
+                    </label>
+
+                    <input class="button button-block button-positive" type="submit" name="submit" value="Enviar al Servidor">
+                </form>
+
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        Respuesta del Servidor: <b>{{response[0].desc}}</b>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-pane>
+    </body>
+</html>
